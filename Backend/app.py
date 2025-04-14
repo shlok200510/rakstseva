@@ -1,10 +1,12 @@
 from flask import Flask, request, jsonify, g
+from flask_cors import CORS  # Add this import
 import sqlite3
 import os
 from datetime import datetime
 import config
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 # Helper function to connect to the database
 def get_db_connection():
@@ -57,18 +59,33 @@ def register_donor():
     blood_type = data.get('blood_type')
     city = data.get('city')
     phone = data.get('phone')
-    
+
     if not all([name, blood_type, phone]):
         return jsonify({'error': 'Name, blood type and phone are required'}), 400
 
-    conn = get_db()
-    conn.execute(
-        'INSERT INTO donors (name, email, blood_type, city, phone) VALUES (?, ?, ?, ?, ?)',
-        (name, email, blood_type, city, phone)
-    )
-    conn.commit()
+    try:
+        conn = get_db()
+        print(f"Database path: {config.DATABASE_PATH}")
+        print(f"Inserting data: {name}, {email}, {blood_type}, {city}, {phone}")
 
-    return jsonify({'message': 'Donor registered successfully'}), 201
+        # Verify the table exists
+        tables = conn.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='donors'").fetchall()
+        print(f"Tables found: {tables}")
+
+        conn.execute(
+            'INSERT INTO donors (name, email, blood_type, city, phone) VALUES (?, ?, ?, ?, ?)',
+            (name, email, blood_type, city, phone)
+        )
+        conn.commit()
+
+        # Verify the insertion worked
+        count = conn.execute('SELECT COUNT(*) FROM donors').fetchone()[0]
+        print(f"Total donors after insert: {count}")
+
+        return jsonify({'message': 'Donor registered successfully'}), 201
+    except Exception as e:
+        print(f"Error during registration: {e}")
+        return jsonify({'error': f'Database error: {str(e)}'}), 500
 
 # Route to request blood
 @app.route('/request', methods=['POST'])
