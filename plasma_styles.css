@@ -1,0 +1,492 @@
+/* Plasma Donation Specific Styles */
+.plasma-page {
+    background-color: #f8f9ff;
+  }
+  
+  .plasma-header {
+    background-color: #5e72e4;
+  }
+  
+  .plasma-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(94, 114, 228, 0.15);
+    border-top: 4px solid #5e72e4;
+    margin-bottom: 2rem;
+  }
+  
+  .plasma-section {
+    padding: 2rem 1rem;
+  }
+  
+  .plasma-section h2 {
+    color: #2d3748;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .plasma-section h2 i {
+    color: #5e72e4;
+  }
+  
+  .section-description {
+    color: #4a5568;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+  
+  .emergency-link {
+    color: #e53e3e;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  
+  /* Hero Section */
+  .plasma-hero {
+    background: linear-gradient(135deg, #5e72e4 0%, #825ee4 100%);
+    color: white;
+    padding: 3rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .plasma-hero-content {
+    flex: 1;
+    min-width: 300px;
+    padding: 1rem;
+  }
+  
+  .plasma-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .plasma-tagline {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+  
+  .plasma-hero-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .plasma-hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  .plasma-cta-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  /* Info Section */
+  .plasma-info-section {
+    padding: 3rem 1rem;
+    background-color: #f8f9ff;
+  }
+  
+  .plasma-info-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .plasma-info-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+  
+  .plasma-info-text {
+    flex: 2;
+    min-width: 300px;
+  }
+  
+  .plasma-info-text p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: #4a5568;
+  }
+  
+  .plasma-info-text h3 {
+    margin: 1.5rem 0 1rem;
+    color: #2d3748;
+  }
+  
+  .plasma-benefits {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .plasma-benefits li {
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .plasma-benefits li i {
+    color: #38a169;
+  }
+  
+  .plasma-info-stats {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .plasma-stat {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(94, 114, 228, 0.1);
+    text-align: center;
+    border-left: 4px solid #5e72e4;
+  }
+  
+  .plasma-stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #5e72e4;
+    margin-bottom: 0.5rem;
+  }
+  
+  .plasma-stat-text {
+    color: #4a5568;
+    font-size: 1rem;
+  }
+  
+  /* Eligibility Section */
+  .plasma-eligibility {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    border: 1px dashed #cbd5e0;
+  }
+  
+  .plasma-eligibility h3 {
+    margin-bottom: 1.5rem;
+    color: #2d3748;
+    text-align: center;
+  }
+  
+  .eligibility-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .eligibility-item {
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .eligibility-item i {
+    font-size: 2rem;
+    color: #5e72e4;
+    margin-bottom: 1rem;
+  }
+  
+  .eligibility-item h4 {
+    margin-bottom: 0.5rem;
+    color: #2d3748;
+  }
+  
+  .eligibility-item p {
+    color: #4a5568;
+  }
+  
+  /* Form Styles */
+  .plasma-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .form-group label {
+    font-weight: 500;
+    color: #2d3748;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"],
+  .form-group input[type="number"],
+  .form-group input[type="date"],
+  .form-group select,
+  .form-group textarea {
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.2s;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #5e72e4;
+    box-shadow: 0 0 0 3px rgba(94, 114, 228, 0.1);
+  }
+  
+  .radio-group,
+  .notification-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .radio-label,
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: normal;
+    cursor: pointer;
+  }
+  
+  .notification-preferences h4 {
+    margin-bottom: 0.75rem;
+    color: #2d3748;
+  }
+  
+  .location-group {
+    background-color: #f7fafc;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px dashed #cbd5e0;
+  }
+  
+  .location-status {
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+  
+  .location-status.loading {
+    color: #4299e1;
+  }
+  
+  .location-status.success {
+    color: #38a169;
+  }
+  
+  .location-status.error {
+    color: #e53e3e;
+  }
+  
+  .slider {
+    
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: #e2e8f0;
+    outline: none;
+    margin: 1rem 0 0.5rem;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #5e72e4;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #5e72e4;
+    cursor: pointer;
+  }
+  
+  .radius-value {
+    text-align: center;
+    font-size: 0.875rem;
+    color: #4a5568;
+  }
+  
+  /* FAQ Section */
+  .faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .faq-item {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .faq-question {
+    padding: 1rem 1.5rem;
+    background-color: #f8fafc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .faq-question h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #2d3748;
+  }
+  
+  .faq-answer {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+  
+  .faq-item.active .faq-answer {
+    padding: 1rem 1.5rem;
+    max-height: 500px;
+  }
+  
+  .faq-item.active .faq-question i {
+    transform: rotate(180deg);
+  }
+  
+  /* Notification Permission */
+  .notification-permission {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 1.5rem;
+    max-width: 350px;
+    z-index: 100;
+    border-left: 4px solid #5e72e4;
+  }
+  
+  .notification-permission-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .notification-permission-content i {
+    font-size: 2rem;
+    color: #5e72e4;
+    margin-bottom: 1rem;
+  }
+  
+  .notification-permission-content h3 {
+    margin-bottom: 0.5rem;
+    color: #2d3748;
+  }
+  
+  .notification-permission-content p {
+    margin-bottom: 1.5rem;
+    color: #4a5568;
+  }
+  
+  .notification-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .notification-status {
+    font-size: 0.875rem;
+    color: #718096;
+  }
+  
+  .notification-status.active {
+    color: #38a169;
+  }
+  
+  /* Button Styles */
+  .plasma-button {
+    background-color: #5e72e4;
+  }
+  
+  .plasma-button:hover {
+    background-color: #4c5ec7;
+  }
+  
+  .outline-button {
+    background-color: transparent;
+    border: 1px solid #5e72e4;
+    color: #5e72e4;
+  }
+  
+  .outline-button:hover {
+    background-color: #f0f4ff;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .plasma-hero {
+      flex-direction: column;
+      padding: 2rem 1rem;
+    }
+  
+    .plasma-hero-content {
+      text-align: center;
+    }
+  
+    .plasma-cta-buttons {
+      justify-content: center;
+    }
+  
+    .plasma-container {
+      padding: 1.5rem;
+    }
+  
+    .eligibility-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .notification-permission {
+      left: 1rem;
+      right: 1rem;
+      max-width: none;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .eligibility-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .notification-buttons {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+  

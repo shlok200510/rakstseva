@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plasma Donation - RaktSeva</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="plasma-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="plasma-page">
+    <header class="plasma-header">
+        <div class="nav-container">
+            <nav class="main-nav">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-heart"></i>
+                    RaktSeva
+                </a>
+                <div class="nav-links">
+                    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                    <a href="sos.html"><i class="fas fa-exclamation-circle"></i> Emergency SOS</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <section id="plasma-hero" class="plasma-hero">
+            <div class="plasma-hero-content">
+                <h1>Plasma Donation</h1>
+                <p class="plasma-tagline">Your plasma can save multiple lives</p>
+                <div class="plasma-cta-buttons">
+                    <a href="#donate-plasma" class="button plasma-button">
+                        <i class="fas fa-hand-holding-medical"></i> Donate Plasma
+                    </a>
+                    <a href="#request-plasma" class="button button-secondary">
+                        <i class="fas fa-notes-medical"></i> Request Plasma
+                    </a>
+                </div>
+            </div>
+            <div class="plasma-hero-image">
+                <img src="/placeholder.svg?height=300&width=400" alt="Plasma donation illustration">
+            </div>
+        </section>
+
+        <section id="plasma-info" class="plasma-info-section">
+            <div class="plasma-info-container">
+                <h2><i class="fas fa-info-circle"></i> What is Plasma Donation?</h2>
+                <div class="plasma-info-content">
+                    <div class="plasma-info-text">
+                        <p>Plasma is the liquid portion of your blood that contains essential proteins and antibodies. Unlike whole blood donation, plasma donation allows you to donate more frequently as your body replaces plasma within 24-48 hours.</p>
+                        <p>During plasma donation, blood is drawn from your arm and passed through a machine that separates plasma from other blood components. The red blood cells and other components are then returned to your body.</p>
+                        <h3>Why Plasma Donation Matters</h3>
+                        <ul class="plasma-benefits">
+                            <li><i class="fas fa-check-circle"></i> Treats patients with bleeding disorders</li>
+                            <li><i class="fas fa-check-circle"></i> Helps burn and trauma victims</li>
+                            <li><i class="fas fa-check-circle"></i> Supports immune deficiency treatments</li>
+                        </ul>
+                    </div>
+                    <div class="plasma-info-stats">
+                        <div class="plasma-stat">
+                            <div class="plasma-stat-number">60%</div>
+                            <div class="plasma-stat-text">of blood is plasma</div>
+                        </div>
+                        <div class="plasma-stat">
+                            <div class="plasma-stat-number">13</div>
+                            <div class="plasma-stat-text">donations needed for one treatment</div>
+                        </div>
+                        <div class="plasma-stat">
+                            <div class="plasma-stat-number">24</div>
+                            <div class="plasma-stat-text">donations possible per year</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="donate-plasma" class="plasma-section">
+            <div class="plasma-container">
+                <h2><i class="fas fa-hand-holding-medical"></i> Become a Plasma Donor</h2>
+                <div class="plasma-eligibility">
+                    <h3>Eligibility Requirements</h3>
+                    <div class="eligibility-grid">
+                        <div class="eligibility-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <h4>Age</h4>
+                            <p>18-65 years old</p>
+                        </div>
+                        <div class="eligibility-item">
+                            <i class="fas fa-weight"></i>
+                            <h4>Weight</h4>
+                            <p>At least 50 kg</p>
+                        </div>
+                        <div class="eligibility-item">
+                            <i class="fas fa-heartbeat"></i>
+                            <h4>Health</h4>
+                            <p>Good general health</p>
+                        </div>
+                        <div class="eligibility-item">
+                            <i class="fas fa-clock"></i>
+                            <h4>Time</h4>
+                            <p>Last donation > 28 days ago</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="plasma-donor-form" class="plasma-form">
+                    <div class="form-group">
+                        <label for="donorName">Full Name:</label>
+                        <input type="text" id="donorName" name="donorName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="donorAge">Age:</label>
+                        <input type="number" id="donorAge" name="donorAge" min="18" max="65" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="donorBloodType">Blood Type:</label>
+                        <select id="donorBloodType" name="donorBloodType" required>
+                            <option value="">Select Blood Type</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="donorPhone">Phone Number:</label>
+                        <input type="tel" id="donorPhone" name="donorPhone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="donorEmail">Email:</label>
+                        <input type="email" id="donorEmail" name="donorEmail" required>
+                    </div>
+
+                    <div class="form-group location-group">
+                        <label>
+                            <input type="checkbox" id="donorShareLocation" name="donorShareLocation"> 
+                            Share my location to find nearby donation centers
+                        </label>
+                        <div id="donorLocationStatus" class="location-status"></div>
+                    </div>
+
+                
+
+                    <div class="form-group notification-preferences">
+                        <h4>Notification Preferences</h4>
+                        <div class="notification-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="notifyEmergency" checked> 
+                                Emergency Plasma Requests
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="notifyDonationDrive" checked> 
+                                Plasma Donation Drives
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="notifyEligibility" checked> 
+                                Donation Eligibility Reminders
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="button plasma-button">
+                            <i class="fas fa-user-plus"></i> Register as Plasma Donor
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section id="request-plasma" class="plasma-section">
+            <div class="plasma-container">
+                <h2><i class="fas fa-notes-medical"></i> Request Plasma</h2>
+                <p class="section-description">Fill out the form below to request plasma for a patient. For emergency requests, please use our <a href="sos.html" class="emergency-link">Emergency SOS</a> service.</p>
+
+                <form id="plasma-request-form" class="plasma-form">
+                    <div class="form-group">
+                        <label for="patientName">Patient Name:</label>
+                        <input type="text" id="patientName" name="patientName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="patientBloodType">Required Blood Type:</label>
+                        <select id="patientBloodType" name="patientBloodType" required>
+                            <option value="">Select Blood Type</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hospital">Hospital Name:</label>
+                        <input type="text" id="hospital" name="hospital" required list="hospitals-list">
+                        <datalist id="hospitals-list">
+                            <option value="Apollo Hospital">
+                            <option value="AIIMS">
+                            <option value="Fortis Hospital">
+                            <option value="Max Hospital">
+                            <option value="Medanta">
+                        </datalist>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="requiredUnits">Required Units:</label>
+                        <input type="number" id="requiredUnits" name="requiredUnits" min="1" max="10" value="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="requiredBy">Required By Date:</label>
+                        <input type="date" id="requiredBy" name="requiredBy" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactName">Contact Person:</label>
+                        <input type="text" id="contactName" name="contactName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactNumber">Contact Number:</label>
+                        <input type="tel" id="contactNumber" name="contactNumber" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactEmail">Contact Email:</label>
+                        <input type="email" id="contactEmail" name="contactEmail">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notificationRadius">Notification Radius (km):</label>
+                        <input type="range" id="notificationRadius" name="notificationRadius" min="5" max="50" value="20" class="slider">
+                        <div class="radius-value"><span id="radius-value">20</span> km</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additionalInfo">Additional Information:</label>
+                        <textarea id="additionalInfo" name="additionalInfo" rows="3" placeholder="Any specific requirements or additional information"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="button plasma-button">
+                            <i class="fas fa-paper-plane"></i> Submit Plasma Request
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+ </main>
+
+    <footer>
+        <div class="footer-content">
+            <a href="index.html">Home</a>
+            <span>|</span>
+            <a href="sos.html">Emergency SOS</a>
+            <span>|</span>
+            <a href="#about">About</a>
+            <span>|</span>
+            <a href="#contact">Contact</a>
+           
+        </div>
+    </footer>
+
+    <!-- Floating SOS Button -->
+    <div id="floating-sos" class="floating-sos">
+        <a href="sos.html" class="floating-sos-button">
+            <i class="fas fa-exclamation-circle"></i>
+            <span>SOS</span>
+        </a>
+    </div>
+
+    <!-- Notification Permission Request -->
+    <div id="notification-permission" class="notification-permission">
+        <div class="notification-permission-content">
+            <i class="fas fa-bell"></i>
+            <h3>Enable Notifications</h3>
+            <p>Get alerts for emergency plasma requests in your area</p>
+            <div class="notification-buttons">
+                <button id="notification-subscribe" class="button plasma-button">
+                    <i class="fas fa-bell"></i> Enable
+                </button>
+                <button id="notification-unsubscribe" class="button outline-button" style="display: none;">
+                    <i class="fas fa-bell-slash"></i> Disable
+                </button>
+            </div>
+            <div id="notification-status" class="notification-status">
+                Enable notifications to help save lives
+            </div>
+        </div>
+    </div>
+
+    <script src="notifications.js"></script>
+    <script src="plasma.js"></script>
+</body>
+</html>
