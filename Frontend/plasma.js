@@ -207,4 +207,14 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             <div class="action-buttons">
               <button class="button secondary-button" onclick="window.location.reload()">
-                <i class="fas fa-red
+                <i class="fas fa-red/o-cross"></i> Request Another Plasma
+                </button>
+                <a href="index.html" class="button plasma-button">
+                <i class="fas fa-home"></i> Home
+                </a>
+            </div>
+            </div>
+        `;
+        } catch (error) {
+        alert(`Request submission failed: ${error.message}`);
+      }

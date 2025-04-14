@@ -2,6 +2,11 @@ document.getElementById("requestForm").addEventListener("submit", async function
   e.preventDefault();
 
   try {
+    // Check if API is defined
+    if (typeof api === 'undefined') {
+      throw new Error("API module is not loaded. Please check if api.js is included in the page.");
+    }
+
     const formData = {
       patient_name: document.getElementById("patientName").value,
       blood_type: document.getElementById("bloodType").value,
@@ -26,6 +31,7 @@ document.getElementById("requestForm").addEventListener("submit", async function
     
   } catch (error) {
     alert(`Request submission failed: ${error.message}`);
+    console.error("Request submission error:", error);
   } finally {
     // Reset button state
     const submitButton = this.querySelector("button[type='submit']");

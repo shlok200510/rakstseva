@@ -2,6 +2,9 @@
 
 const API_BASE_URL = 'http://localhost:5000';
 
+// Log when API module loads
+console.log("API module loading...");
+
 // Generic function to make API calls
 async function apiRequest(endpoint, method = 'GET', data = null) {
   try {
@@ -17,7 +20,7 @@ async function apiRequest(endpoint, method = 'GET', data = null) {
     }
 
     const response = await fetch(`${API_BASE_URL}${endpoint}`, options);
-    
+
     // If response is not ok, throw an error
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
@@ -35,17 +38,17 @@ async function apiRequest(endpoint, method = 'GET', data = null) {
 const api = {
   // Donor registration
   registerDonor: (donorData) => apiRequest('/register', 'POST', donorData),
-  
+
   // Blood request
   requestBlood: (requestData) => apiRequest('/request', 'POST', requestData),
-  
+
   // SOS emergency
   sendSosAlert: (sosData) => apiRequest('/sos', 'POST', sosData),
-  
+
   // Plasma donation
   registerPlasmaDonor: (donorData) => apiRequest('/plasma/register', 'POST', donorData),
   requestPlasma: (requestData) => apiRequest('/plasma/request', 'POST', requestData),
-  
+
   // Get data
   getDonors: () => apiRequest('/donors'),
   getBloodRequests: () => apiRequest('/requests'),
@@ -53,3 +56,9 @@ const api = {
   getPlasmaDonors: () => apiRequest('/plasma/donors'),
   getPlasmaRequests: () => apiRequest('/plasma/requests'),
 };
+
+// Make api globally accessible
+window.api = api;
+
+// Log successful initialization
+console.log("API module loaded successfully");
