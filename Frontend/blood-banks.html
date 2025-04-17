@@ -5,184 +5,301 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blood Banks - RaktSeva</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .blood-bank-card {
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-        }
-        
-        .blood-bank-card h3 {
-            color: #e74c3c;
-            margin-top: 0;
-        }
-        
-        .search-container {
-            margin-bottom: 2rem;
-        }
-        
-        .filter-group {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-        }
-        
-        .filter-group select, 
-        .filter-group input {
-            flex: 1;
-            min-width: 200px;
-        }
-        
-        .availability {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
-        }
-        
-        .blood-type {
-            background-color: #f4f4f4;
-            padding: 0.25rem 0.5rem;
-            border-radius: 3px;
-            font-size: 0.9rem;
-        }
-        
-        .blood-type.available {
-            background-color: #e7f9e7;
-            color: #2ecc71;
-        }
-        
-        .blood-type.low {
-            background-color: #fff9e7;
-            color: #f39c12;
-        }
-        
-        .blood-type.critical {
-            background-color: #fde7e7;
-            color: #e74c3c;
-        }
-        
-        @media (max-width: 768px) {
-            .filter-group {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="blood-banks-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>Blood Banks Directory</h1>
+        <div class="nav-container">
+            <nav class="main-nav">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-heart"></i>
+                    RaktSeva
+                </a>
+                <div class="hamburger-menu" id="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="nav-links" id="nav-links">
+                    <a href="register.html"><i class="fas fa-user-plus"></i> Register as Donor</a>
+                    <a href="request.html"><i class="fas fa-hand-holding-medical"></i> Request Blood</a>
+                    <a href="plasma.html"><i class="fas fa-tint"></i> Plasma Donation</a>
+                    <a href="blood-banks.html" class="active"><i class="fas fa-hospital"></i> Blood Banks</a>
+                    <a href="sos.html" class="sos-nav-link"><i class="fas fa-exclamation-circle"></i> Emergency SOS</a>
+                </div>
+            </nav>
+        </div>
+        <div class="sos-banner">
+            <a href="sos.html" class="sos-banner-link">
+                <i class="fas fa-exclamation-triangle"></i>
+                Emergency? Click here for immediate blood request
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
     </header>
-    
+
     <main>
-        <section>
-            <div class="search-container">
-                <h2>Find Blood Banks Near You</h2>
-                <div class="filter-group">
-                    <input type="text" id="citySearch" placeholder="Enter city or district">
-                    <select id="stateFilter">
-                        <option value="">All States</option>
-                        <option value="Andhra Pradesh">Andhra Pradesh</option>
-                        <option value="Delhi">Delhi</option>
-                        <option value="Karnataka">Karnataka</option>
-                        <option value="Maharashtra">Maharashtra</option>
-                        <option value="Tamil Nadu">Tamil Nadu</option>
-                        <option value="Uttar Pradesh">Uttar Pradesh</option>
-                        <option value="West Bengal">West Bengal</option>
-                    </select>
-                    <select id="bloodTypeFilter">
-                        <option value="">All Blood Types</option>
-                        <option value="A+">A+</option>
-                        <option value="A-">A-</option>
-                        <option value="B+">B+</option>
-                        <option value="B-">B-</option>
-                        <option value="AB+">AB+</option>
-                        <option value="AB-">AB-</option>
-                        <option value="O+">O+</option>
-                        <option value="O-">O-</option>
-                    </select>
-                </div>
-                <button id="searchButton" class="button">Search</button>
+        <section class="page-header">
+            <div class="container">
+                <h1><i class="fas fa-hospital"></i> Blood Banks Directory</h1>
+                <p>Find blood banks near you and check blood availability in real-time</p>
             </div>
-            
-            <div id="bloodBanksList">
-                <div class="blood-bank-card">
-                    <h3>Red Cross Blood Bank</h3>
-                    <p><strong>Address:</strong> 123 Health Avenue, Koramangala, Bangalore, Karnataka</p>
-                    <p><strong>Contact:</strong> 080-12345678</p>
-                    <p><strong>Hours:</strong> 9:00 AM - 6:00 PM (Mon-Sat)</p>
-                    <div class="availability">
-                        <span><strong>Blood Availability:</strong></span>
-                        <span class="blood-type available">A+</span>
-                        <span class="blood-type available">B+</span>
-                        <span class="blood-type low">AB+</span>
-                        <span class="blood-type critical">O-</span>
-                        <span class="blood-type available">O+</span>
+        </section>
+
+        <section class="search-section card">
+            <div class="search-container">
+                <h2><i class="fas fa-search"></i> Find Blood Banks Near You</h2>
+                <div class="filter-group">
+                    <div class="input-with-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <input type="text" id="citySearch" placeholder="Enter city or district">
+                    </div>
+                    <div class="input-with-icon">
+                        <i class="fas fa-map"></i>
+                        <select id="stateFilter">
+                            <option value="">All States</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="West Bengal">West Bengal</option>
+                        </select>
+                    </div>
+                    <div class="input-with-icon">
+                        <i class="fas fa-tint"></i>
+                        <select id="bloodTypeFilter">
+                            <option value="">All Blood Types</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
                     </div>
                 </div>
-                
+                <button id="searchButton" class="button">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <div class="results-header">
+                <h2>Blood Banks Available</h2>
+                <div class="results-count">4 banks found</div>
+            </div>
+
+            <div id="bloodBanksList" class="blood-banks-grid">
                 <div class="blood-bank-card">
-                    <h3>City Blood Center</h3>
-                    <p><strong>Address:</strong> 45 Medical Complex, Andheri East, Mumbai, Maharashtra</p>
-                    <p><strong>Contact:</strong> 022-98765432</p>
-                    <p><strong>Hours:</strong> 8:00 AM - 8:00 PM (All days)</p>
+                    <div class="blood-bank-header">
+                        <h3>Red Cross Blood Bank</h3>
+                        <span class="status open">Open Now</span>
+                    </div>
+                    <div class="blood-bank-details">
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>123 Health Avenue, Koramangala, Bangalore, Karnataka</p>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-phone"></i>
+                            <p>080-12345678</p>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <p>9:00 AM - 6:00 PM (Mon-Sat)</p>
+                        </div>
+                    </div>
                     <div class="availability">
-                        <span><strong>Blood Availability:</strong></span>
-                        <span class="blood-type available">A+</span>
-                        <span class="blood-type low">A-</span>
-                        <span class="blood-type available">B+</span>
-                        <span class="blood-type available">AB+</span>
-                        <span class="blood-type low">O+</span>
+                        <h4>Blood Availability:</h4>
+                        <div class="blood-types">
+                            <span class="blood-type available">A+</span>
+                            <span class="blood-type available">B+</span>
+                            <span class="blood-type low">AB+</span>
+                            <span class="blood-type critical">O-</span>
+                            <span class="blood-type available">O+</span>
+                        </div>
+                    </div>
+                    <div class="blood-bank-actions">
+                        <a href="#" class="button button-sm">
+                            <i class="fas fa-phone"></i> Contact
+                        </a>
+                        <a href="#" class="button button-sm button-secondary">
+                            <i class="fas fa-map-marked-alt"></i> Directions
+                        </a>
                     </div>
                 </div>
-                
+
                 <div class="blood-bank-card">
-                    <h3>National Blood Services</h3>
-                    <p><strong>Address:</strong> 78 Gandhi Road, Connaught Place, New Delhi, Delhi</p>
-                    <p><strong>Contact:</strong> 011-45678901</p>
-                    <p><strong>Hours:</strong> 9:00 AM - 5:00 PM (Mon-Fri)</p>
+                    <div class="blood-bank-header">
+                        <h3>City Blood Center</h3>
+                        <span class="status open">Open Now</span>
+                    </div>
+                    <div class="blood-bank-details">
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>45 Medical Complex, Andheri East, Mumbai, Maharashtra</p>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-phone"></i>
+                            <p>022-98765432</p>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <p>8:00 AM - 8:00 PM (All days)</p>
+                        </div>
+                    </div>
                     <div class="availability">
-                        <span><strong>Blood Availability:</strong></span>
-                        <span class="blood-type critical">A-</span>
-                        <span class="blood-type low">B-</span>
-                        <span class="blood-type available">AB-</span>
-                        <span class="blood-type available">O+</span>
-                        <span class="blood-type critical">O-</span>
+                        <h4>Blood Availability:</h4>
+                        <div class="blood-types">
+                            <span class="blood-type available">A+</span>
+                            <span class="blood-type low">A-</span>
+                            <span class="blood-type available">B+</span>
+                            <span class="blood-type available">AB+</span>
+                            <span class="blood-type low">O+</span>
+                        </div>
+                    </div>
+                    <div class="blood-bank-actions">
+                        <a href="#" class="button button-sm">
+                            <i class="fas fa-phone"></i> Contact
+                        </a>
+                        <a href="#" class="button button-sm button-secondary">
+                            <i class="fas fa-map-marked-alt"></i> Directions
+                        </a>
                     </div>
                 </div>
-                
+
                 <div class="blood-bank-card">
-                    <h3>Life Saver Blood Bank</h3>
-                    <p><strong>Address:</strong> 234 Hospital Lane, T Nagar, Chennai, Tamil Nadu</p>
-                    <p><strong>Contact:</strong> 044-56789012</p>
-                    <p><strong>Hours:</strong> 8:30 AM - 7:00 PM (All days)</p>
+                    <div class="blood-bank-header">
+                        <h3>National Blood Services</h3>
+                        <span class="status closed">Closed Now</span>
+                    </div>
+                    <div class="blood-bank-details">
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>78 Gandhi Road, Connaught Place, New Delhi, Delhi</p>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-phone"></i>
+                            <p>011-45678901</p>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <p>9:00 AM - 5:00 PM (Mon-Fri)</p>
+                        </div>
+                    </div>
                     <div class="availability">
-                        <span><strong>Blood Availability:</strong></span>
-                        <span class="blood-type available">A+</span>
-                        <span class="blood-type available">B+</span>
-                        <span class="blood-type available">AB+</span>
-                        <span class="blood-type low">AB-</span>
-                        <span class="blood-type available">O+</span>
+                        <h4>Blood Availability:</h4>
+                        <div class="blood-types">
+                            <span class="blood-type critical">A-</span>
+                            <span class="blood-type low">B-</span>
+                            <span class="blood-type available">AB-</span>
+                            <span class="blood-type available">O+</span>
+                            <span class="blood-type critical">O-</span>
+                        </div>
+                    </div>
+                    <div class="blood-bank-actions">
+                        <a href="#" class="button button-sm">
+                            <i class="fas fa-phone"></i> Contact
+                        </a>
+                        <a href="#" class="button button-sm button-secondary">
+                            <i class="fas fa-map-marked-alt"></i> Directions
+                        </a>
+                    </div>
+                </div>
+
+                <div class="blood-bank-card">
+                    <div class="blood-bank-header">
+                        <h3>Life Saver Blood Bank</h3>
+                        <span class="status open">Open Now</span>
+                    </div>
+                    <div class="blood-bank-details">
+                        <div class="detail-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>234 Hospital Lane, T Nagar, Chennai, Tamil Nadu</p>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-phone"></i>
+                            <p>044-56789012</p>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <p>8:30 AM - 7:00 PM (All days)</p>
+                        </div>
+                    </div>
+                    <div class="availability">
+                        <h4>Blood Availability:</h4>
+                        <div class="blood-types">
+                            <span class="blood-type available">A+</span>
+                            <span class="blood-type available">B+</span>
+                            <span class="blood-type available">AB+</span>
+                            <span class="blood-type low">AB-</span>
+                            <span class="blood-type available">O+</span>
+                        </div>
+                    </div>
+                    <div class="blood-bank-actions">
+                        <a href="#" class="button button-sm">
+                            <i class="fas fa-phone"></i> Contact
+                        </a>
+                        <a href="#" class="button button-sm button-secondary">
+                            <i class="fas fa-map-marked-alt"></i> Directions
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <section>
-            <h2>Register Your Blood Bank</h2>
-            <p>If you represent a blood bank and would like to be listed in our directory, please contact us at <a href="mailto:info@raktseva.org">info@raktseva.org</a> or call us at 1800-123-4567.</p>
+
+        <section class="register-section card">
+            <div class="register-content">
+                <div class="register-text">
+                    <h2><i class="fas fa-hospital-user"></i> Register Your Blood Bank</h2>
+                    <p>If you represent a blood bank and would like to be listed in our directory, join our network to help save more lives.</p>
+                    <ul class="benefits-list">
+                        <li><i class="fas fa-check-circle"></i> Increase visibility to potential donors</li>
+                        <li><i class="fas fa-check-circle"></i> Get real-time blood donation requests</li>
+                        <li><i class="fas fa-check-circle"></i> Manage blood inventory efficiently</li>
+                    </ul>
+                </div>
+                <div class="register-action">
+                    <a href="mailto:info@raktseva.org" class="button">
+                        <i class="fas fa-envelope"></i> Contact Us
+                    </a>
+                    <p class="call-us">Or call us at <strong>1800-123-4567</strong></p>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2023 RaktSeva Blood Donation. All rights reserved.</p>
-        <a href="index.html">Back to Home</a>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-heart"></i>
+                <span>RaktSeva</span>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 RaktSeva Blood Donation. All rights reserved.</p>
+        </div>
     </footer>
-    <script src="api.js"></script>
 
+    <script src="api.js"></script>
+    <script src="navigation.js"></script>
     <script src="blood-banks.js"></script>
 </body>
 </html>
-
